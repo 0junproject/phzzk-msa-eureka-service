@@ -40,14 +40,13 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
+          tags: ${{ secrets.DOCKER_USERNAME }}/phzzk-msa-eureka-service:$latest
+          labels: ${{ secrets.DOCKER_USERNAME }}/phzzk-msa-eureka-service:$latest
 
       - name: Generate artifact attestation
         uses: actions/attest-build-provenance@v3
         with:
           subject-name: index.docker.io/phzzk-msa/phzzk-msa-eureka-service
-          subject-digest: ${{ steps.push.outputs.digest }}
           push-to-registry: true
 
   build:
