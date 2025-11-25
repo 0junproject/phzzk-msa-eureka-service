@@ -1,10 +1,10 @@
 # 1단계: 빌드 환경 정의 (Java 컴파일 및 패키징용)
-FROM openjdk:21-jdk AS build
+FROM openjdk:21 AS build
 ARG JAR_FILE=target/*.jar
 COPY ${JAR_FILE} app.jar
 
 # 2단계: 실행 환경 정의 (더 작은 JRE 이미지만 사용)
-FROM openjdk:21-jdk
+FROM openjdk:21
 # 환경 변수로 Spring Profile 지정 (필요 시)
 ENV SPRING_PROFILES_ACTIVE=prod 
 # 컨테이너 내의 작업 디렉토리 설정
