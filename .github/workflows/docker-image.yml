@@ -41,7 +41,7 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/phzzk-msa-eureka-service:$latest
-          labels: ${{ secrets.DOCKER_USERNAME }}/phzzk-msa-eureka-service:$latest
+          # labels: ${{ secrets.DOCKER_USERNAME }}/phzzk-msa-eureka-service:$latest
 
       - name: Generate artifact attestation
         uses: actions/attest-build-provenance@v3
