@@ -40,7 +40,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/phzzk-msa-eureka-service:$latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/phzzk-msa-eureka-service:latest
           # labels: ${{ secrets.DOCKER_USERNAME }}/phzzk-msa-eureka-service:$latest
 
       - name: Generate artifact attestation
@@ -56,4 +56,4 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag ${{ secrets.DOCKER_USERNAME }}/phzzk-msa-eureka-service:$latest
+      run: docker build . --file Dockerfile --tag ${{ secrets.DOCKER_USERNAME }}/phzzk-msa-eureka-service:latest
