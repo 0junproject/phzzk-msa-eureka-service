@@ -1,0 +1,6 @@
+spring:
+  application:
+    name:
+      phzzk-msa-eureka-service
+server:
+  port: 8761
