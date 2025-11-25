@@ -36,12 +36,8 @@ ENV SPRING_PROFILES_ACTIVE=prod
 # 컨테이너 내의 작업 디렉토리 설정
 WORKDIR /app
 
-# 빌드된 JAR 파일 이름 정의 (build.gradle에 따라 이름이 다를 수 있음)
-# 실제 프로젝트 빌드된 파일명으로 변경해야 합니다.
-ARG JAR_FILE_NAME=your-spring-app-name-0.0.1-SNAPSHOT.jar
-
 # 1단계(build)에서 생성된 JAR 파일을 최종 실행 이미지로 복사
-COPY --from=build /app/build/libs/${JAR_FILE_NAME} app.jar
+COPY --from=build /app/build/libs/app.jar app.jar
 
 # 애플리케이션 실행 명령어
 ENTRYPOINT ["java", "-jar", "app.jar"]
