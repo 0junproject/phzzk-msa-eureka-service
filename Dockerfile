@@ -23,7 +23,6 @@ COPY src src
 RUN ./gradlew bootJar --no-daemon -x test
 
 # -------------------------------------------------------------
----
 
 # 2단계: 실행 스테이지 (Run Stage)
 # JRE 21만 포함된 경량 이미지 사용
