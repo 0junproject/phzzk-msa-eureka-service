@@ -48,3 +48,7 @@ dependencyManagement {
 tasks.named('test') {
     useJUnitPlatform()
 }
+
+bootJar {
+    archiveFileName = "app.jar" // JAR 파일명을 'app.jar'로 고정
+}
